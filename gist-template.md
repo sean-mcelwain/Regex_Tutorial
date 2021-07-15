@@ -48,6 +48,16 @@ Bracket Expressions allow regular expressions to specify a search parameters usi
 
 ### Character Classes
 
+Character classes allow regular expressions to define a set of characters for finding a match within a given string. 
+
+Common Character Classes Include:
+- Positve and Negative Character Groups using Bracket Expressions ([]) (discussed above in Bracket Expressions)
+- Any Character - using the dot character (.) in a regex returns a wildcard character that matches any charcter except for \n, which is used to specify a new line. The bracket expression equivalent is: [A-Za-z0-9_]
+- Decimal Digit Character - using the slash and d characters (\d) matches any numeral digit. The bracket expression equivalent is: [0-9].  Whereas using the slash and D characters (\D) matches a non-digit character.
+- Word Character - using the slash and w characters (\w) matches any alphanumeric character including the underscore.  The bracket expression equivalent is: [A-Za-z0-9_]. Whereas using the slash and W characters (\W) matches a non-word character.
+- Whitespace Character - using the slash and s characters (\s) matches a single whitespace character, including tabs and line breaks. Whereas using the slash and S characters (\S) matches a non-whitespace character.
+
+
 ### The OR Operator
 
 ### Flags
