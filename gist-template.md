@@ -60,7 +60,18 @@ Common Character Classes Include:
 
 ### The OR Operator
 
+The OR Operator, designated by the vertical bar character (|) allows regular expressions to match either a specified parameter, or another specified parameter.  And it can be used for multiple parameters (e.g.(a|b|c)).
+
 ### Flags
+
+Flags are a component of regular expressions that define additional functionality or limitations for the search and are appended to the end of the regex following the second slash.  
+
+Some Available Flags
+- Global Search (g) - searches for all occurences in the string
+- Case-insensitive Search (i) - removes case-sensitivity from the search
+- Multi-line Search (m) - searches for all occurences in the string
+- Sticky Search (y) - makes the expression start its searching from the index indicated in its lastIndex property
+- Unicode Search (u) - makes the expression assume individual characters as code points, not code units, and thus match 32-bit characters as well
 
 ### Character Escapes
 
