@@ -75,6 +75,8 @@ Some Available Flags
 
 ### Character Escapes
 
+Charcter Escapes allow a regular expression to find matches including characters that would otherwise be interpreted as a literal.  Character Escapes are designated by the backslash character (\) preceeding the character to be escaped. As an example, the backslash and open curly brace characters (\{) returns matches for the open curly brace character ({) rather than the regex interpreting the open curly brace literally and expecting it to define a quantifier (discused above in Quantifiers).
+
 ## Author
 
-A short section about the author with a link to the author's GitHub profile (replace with your information and a link to your profile)
+Sean McElwain, the author of this tutorial, prepared this Regular Expressions ("Regex") Tutorial as part of Assignment 17 of the University of Kansas Coding Bootcamp Program.  Sean is currently a practicing attorney in the Kansas City Metro Area seeking to transition to a more technologically centered practice and pursuant to that goal, Sean is completing a Bachelors of Science in Electrical and Computer Engineering at the University of Missouri-Kansas City, and elected to participate in the University of Kansas Coding Bootcamp Program.  The purpose in obtaining the B.S.E is to meet eleibility requirements for the USPTO exam (also referred to as the Patent Bar Exam) and the purpose for the Coding Bootcamp is to obtain foundational knowledge for a software engineering patent law practice. 
