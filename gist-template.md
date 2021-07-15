@@ -35,6 +35,10 @@ Quantifiers:
 
 ### Grouping Constructs
 
+Grouping Constructs allow regular expressions that are more complicated to check multiple different sections, or subexpressions, of a string.  The primary way to group subexpressions is to contain that section of the expression in parentheses (()). Subexpressions look for an exact match unless otherwise specified.  
+
+Grouping Constructs are categorized as either "capturing" or "non-capturing," with the capturing groups retaining the matched character sequence for possible re-use with a numbered backreference, and non-capturing groups do not.  Adding the question mark and colon characters (?:) at the beginning of an expression makes the grouping construct non-capturing.  
+
 ### Bracket Expressions
 
 Bracket Expressions allow regular expressions to specify a search parameters using a "positive character group" that we want included in the match results be enclosing them in square brackets ([]).  Alternatively, regex can specify a "negative character group" to exclude from the result by preceding the expression within the brackets with the carrot character (e.g [^a-z])
