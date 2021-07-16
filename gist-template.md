@@ -31,13 +31,9 @@ This Tutorial will introduce the major concepts and uses of Regular Expressions 
 ### Anchors
 Anchors allow regular expressions to specify the position in a string to search for a match.  The two specified positions by regex are either at the beginning or the end of the string.  To specify the beginning of a string, regex use the carrot character (^), and for the end of a string regex use the dollar sign character ($).  Anchors will return both an exact string or a range of possible matches.
 
-
-
-|Starting Anchor (^) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Ending Anchor ($)|
-| ----------------------------------------------------|
-|&nbsp;&nbsp; ↓ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;↓                                                 |
-|`/^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/`  |
-
+|The anchors are identified in black    |
+| ------------------------------------- |
+|  `/`<b>^</b>`([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})`<b>$</b>`/`|
 
 <br>
 
@@ -55,12 +51,9 @@ Greedy quantifier: * Lazy quantifier: *?
 - To match from n to m times: Greedy quantifier: {n,m} Lazy quantifier: {n,m}?
 
 
-
-| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  Quantifiers|
-| ----------------------------------------------------|
-|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ↓ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ↓ |
-|`/^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/`  |
-
+|The quantifiers are identified in black    |
+| ------------------------------------- |
+| `/^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]`<b>&nbsp;{&nbsp;</b>`2,6`<b>&nbsp;}&nbsp;</b>`)$/` |
 <br>
 
 ### Grouping Constructs
@@ -69,11 +62,9 @@ Grouping Constructs allow regular expressions that are more complicated to check
 
 Grouping Constructs are categorized as either "capturing" or "non-capturing," with the capturing groups retaining the matched character sequence for possible re-use with a numbered backreference, and non-capturing groups do not.  Adding the question mark and colon characters (?:) at the beginning of an expression makes the grouping construct non-capturing. 
  
-| Grouping Constructs 
-| ----------------------------------------------------|
-|&nbsp;&nbsp;&nbsp; ↓ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ↓ &nbsp;&nbsp; ↓ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ↓ &nbsp;&nbsp; ↓ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ↓ |
-|`/^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/`  |
-
+|The groupin constructs are identified in black|
+| ------------------------------------- |
+| `/^`<b>&nbsp;(&nbsp;</b>`[a-z0-9_\.-]+`<b>&nbsp;)&nbsp;</b>`@`<b>&nbsp;(&nbsp;</b>`[\da-z\.-]+`<b>&nbsp;)&nbsp;</b>`\.`<b>&nbsp;(&nbsp;</b>`[a-z\.]{2,6})$/` |
 <br>
 
 ### Bracket Expressions
@@ -82,6 +73,10 @@ Bracket Expressions allow regular expressions to specify a search parameters usi
 - The positive character group can either enumerate all of the characters to match (e.g. [abcefg]), or set a range between given alphanumeric characters using a hypen (-), (e.g. [a-g]). 
 - Mulitple sets of paramters can be concated together within a positive character group and provide several additional qualifiers.  Because regex are case sensive, in order to find matches containing both uppercase and lowercase characters the positive character group would be [a-zA-Z].
 - Positive character groups can also specify special characters, but special characters will follow any specified alphanumeric characters (e.g. [a-z0-9_-]). 
+
+|The bracket expressions are identified in black    |
+| ------------------------------------- |
+| `/^(`<b>&nbsp;[a-z0-9_\.-]&nbsp;</b>`+)@(`<b>&nbsp;[\da-z\.-]&nbsp;</b>`+)\.(`<b>&nbsp;[a-z\.]&nbsp;</b>`{2,6})$/`|
 
 <br>
 
@@ -97,11 +92,19 @@ Common Character Classes Include:
 - Word Character - using the slash and w characters (\w) matches any alphanumeric character including the underscore.  The bracket expression equivalent is: [A-Za-z0-9_]. Whereas using the slash and W characters (\W) matches a non-word character.
 - Whitespace Character - using the slash and s characters (\s) matches a single whitespace character, including tabs and line breaks. Whereas using the slash and S characters (\S) matches a non-whitespace character.
 
+|Character classes (except for the character groups) are identified in black    |
+| ------------------------------------- |
+| `/^([a-z0-9_\`<b>&nbsp;.&nbsp;</b>`-]+)@([`<b>&nbsp;\d&nbsp;</b>`a-z\`<b>&nbsp;.&nbsp;</b>`-]+)\`<b>&nbsp;.&nbsp;</b>`([a-z\`<b>&nbsp;.&nbsp;</b>`]{2,6})$/`|
+
 <br>
 
 ### The OR Operator
 
 The OR Operator, designated by the vertical bar character (|) allows regular expressions to match either a specified parameter, or another specified parameter.  And it can be used for multiple parameters (e.g.(a|b|c)).
+
+|OR Operator not present in example regex  |
+| ------------------------------------- |
+| `/^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/`  |
 
 <br>
 
@@ -116,11 +119,19 @@ Some Available Flags
 - Sticky Search (y) - makes the expression start its searching from the index indicated in its lastIndex property
 - Unicode Search (u) - makes the expression assume individual characters as code points, not code units, and thus match 32-bit characters as well
 
+|Flags are not present in example regex  |
+| ------------------------------------- |
+| `/^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/`  |
+
 <br>
 
 ### Character Escapes
 
-Charcter Escapes allow a regular expression to find matches including characters that would otherwise be interpreted as a literal.  Character Escapes are designated by the backslash character (\) preceeding the character to be escaped. As an example, the backslash and open curly brace characters (\{) returns matches for the open curly brace character ({) rather than the regex interpreting the open curly brace literally and expecting it to define a quantifier (discused above in Quantifiers).
+Charcter Escapes allow a regular expression to find matches including characters that would otherwise be interpreted as a literal.  Character Escapes are designated by the backslash character (`\`) preceeding the character to be escaped. As an example, the backslash and open curly brace characters (\{) returns matches for the open curly brace character ({) rather than the regex interpreting the open curly brace literally and expecting it to define a quantifier (discused above in Quantifiers).
+
+|Character Escapes are not present in example regex  |
+| ------------------------------------- |
+| `/^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/`  |
 
 <br>
 
